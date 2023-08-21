@@ -333,10 +333,31 @@ body {
       display: none; } }
 
 .gallery {
-  display: flex; }
+  display: flex;
+  overflow: hidden; }
+  .gallery__item {
+    position: relative; }
+    .gallery__item:hover .gallery__caption {
+      opacity: 1;
+      font-size: 1.8rem;
+      transform: translate(-50%, -20%); }
+    .gallery__item:hover .gallery__photo {
+      filter: blur(3px) brightness(80%); }
   .gallery__photo {
     width: 100%;
-    display: block; }
+    display: block;
+    transition: all .3s; }
+  .gallery__caption {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    opacity: 0;
+    transition: all .5s; }
 
 .overview {
   display: flex;
